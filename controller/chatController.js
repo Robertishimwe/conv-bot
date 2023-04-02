@@ -1,12 +1,14 @@
 import { findComand } from "../services/commandService.js";
 import { createChatCompletion } from "../services/openai.js";
-import { findConversation, createConversation } from "../services/conversationService.js"
+import { createConversation } from "../services/conversationService.js"
 
 class chatControllers {
   // chat controller
   static chat = async (req, res) => {
     try {
       const text = req.body.prompt;
+
+      await createConversation("user", text)
 
       const commandsArray = await findComand(); // use a more descriptive variable name
       console.log("before extract", commandsArray);

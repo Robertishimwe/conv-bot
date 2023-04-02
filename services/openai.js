@@ -1,5 +1,6 @@
 import * as dotenv from 'dotenv'
 import { Configuration, OpenAIApi } from 'openai'
+import { findConversation } from "../services/conversationService"
 
 dotenv.config()
 
@@ -10,6 +11,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 const createChatCompletion = async (prompt) => {
+  console.log(findConversation())
   const response = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
     messages: [
