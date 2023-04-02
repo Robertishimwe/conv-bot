@@ -10,9 +10,35 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration)
 
+
+// function formatConversationHistory(history) {
+//   let result = "";
+//   for (let i = 0; i < history.length; i++) {
+//     const message = history[i];
+//     result += `${message.user}: ${message.message}\n`;
+//   }
+//   return result;
+// }
+
+
+function formatConversationHistory(conversationHistory) {
+  let formattedHistory = '';
+  for (let i = 0; i < conversationHistory.length; i++) {
+    const message = conversationHistory[i];
+    const timestamp = message.CreatedDate.toISOString();
+    formattedHistory += `[${timestamp}] ${message.user}: ${message.message}\n`;
+  }
+  return formattedHistory;
+}
+
+
+
+
+
 const createChatCompletion = async (prompt) => {
-  const conversationHistory = []
-  console.log(typeof(findConversation()))
+  const unformated = await findConversation()
+  const conversationHistory = formatConversationHistory(unformated.data)
+  console.log(conversationHistory)
   const response = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
     messages: [
