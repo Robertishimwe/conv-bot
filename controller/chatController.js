@@ -11,7 +11,7 @@ class chatControllers {
       await createConversation("user", text)
 
       const commandsArray = await findComand(); // use a more descriptive variable name
-      // console.Console("chathistory",findConversation())
+      console.Console("chathistory",await findConversation())
       // console.log("before extract", commandsArray);
       // res.send(commandsArray)
 
