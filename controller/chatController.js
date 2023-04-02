@@ -50,7 +50,8 @@ class chatControllers {
         });
       } else {
         const response = await createChatCompletion(text);
-        return res.status(200).send({ bot: response });
+        const saveData = await createConversation("bot", response)
+        return res.status(200).send({ bot: response,saved: saveData, });
       }
     } catch (error) {
       console.error(error);
