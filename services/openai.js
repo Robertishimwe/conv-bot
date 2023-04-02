@@ -11,7 +11,8 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 const createChatCompletion = async (prompt) => {
-  console.log(findConversation())
+  const conversationHistory = []
+  console.log(typeof(findConversation()))
   const response = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
     messages: [
