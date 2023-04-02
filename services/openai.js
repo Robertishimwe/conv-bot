@@ -42,7 +42,9 @@ const createChatCompletion = async (prompt) => {
   const response = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
     messages: [
-      {role: "user", content: `${prompt}`}
+      {role: "system", content: "your name is bot, you have to answer all asked questions politely with a sanse of humour"},
+      {role: "user", content: `you name is bot. follow this conversation ${conversationHistory} and answer the messages from be user as bot. ask questions, have fun, suggest topics and be freindly. message from user: ${prompt}`},
+      // {role: "user", content: `${prompt}`}
       //{role: "system", content: "your name is ishimwe"}
     ], 
   })
