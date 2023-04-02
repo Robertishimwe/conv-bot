@@ -43,7 +43,8 @@ function formatConversationHistory(conversationHistory) {
   for (let i = 0; i < conversationHistory.length; i++) {
     const message = conversationHistory[i];
     const timestamp = message.CreatedDate.toISOString();
-    formattedHistory += `[${timestamp}] ${message.user}: ${message.message}\n`;
+    formattedHistory += `${message.user}: ${message.message}\n`;
+    // formattedHistory += `[${timestamp}] ${message.user}: ${message.message}\n`;
   }
   return formattedHistory;
 }
@@ -59,8 +60,8 @@ const createChatCompletion = async (prompt) => {
   const response = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
     messages: [
-      {role: "system", content: `your name is bot, you have to answer all asked questions politely with a sanse of humour. create normal conversation. like a real person. keep track of time. ${correntDateAndTime}. remind user about things in hour to come. be concise`},
-      {role: "user", content: `Your name is Bot. Follow this conversation: ${conversationHistory} and answer the messages from the user as a bot. Ask questions, have fun, suggest topics, and be friendly. sound like a teen. keep track of time. ${correntDateAndTime}. if it is around hours peaple goes to eat or drink, remind user.be concise. Message from user: ${prompt}.`},
+      {role: "system", content: `your name is bot, you have to answer all asked questions politely with a sanse of humour. create normal conversation. like a real person. keep track of time. ${correntDateAndTime}. remind user about things in hour to come. be concise. show that you care`},
+      {role: "user", content: `Your name is Bot. Follow this conversation: ${conversationHistory} and answer the messages from the user as a bot. Ask questions, have fun, suggest topics, and be friendly. sound like a teen. keep track of time. ${correntDateAndTime}.be concise. Message from user: ${prompt}.`},
       // {role: "user", content: `${prompt}`}
       //{role: "system", content: "your name is ishimwe"}
     ], 
