@@ -1,5 +1,6 @@
 import { findComand } from "../services/commandService.js";
 import { createChatCompletion } from "../services/openai.js";
+import { findConversation, createConversation } from "../services/conversationService.js"
 
 class chatControllers {
   // chat controller
