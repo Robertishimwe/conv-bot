@@ -24,6 +24,12 @@ class chatControllers {
         return extractedCommands; // add a return statement to return the extracted commands
       };
 
+      function removeBotText(str) {
+        const botTextRegex = /(bot:|Bot:|BOT:)/g;
+        return str.replace(botTextRegex, '').trim();
+      }
+      
+
       const findMatchingWord = (text, extractCommands) => {
         const words = text.split(" "); // split text into individual words
         for (let i = 0; i < words.length; i++) {
@@ -41,7 +47,7 @@ class chatControllers {
           command: findMatchingWord(text, extractCommands(commandsArray?.data)),
         });
         const response = await createChatCompletion(text);
-        const saveData = await createConversation("bot", response)
+        const saveData = await createConversation("bot", removeBotText(response))
         return res.status(200).send({
           dbres: myServeResponse.data[0].value,
           saved: saveData,
@@ -51,7 +57,7 @@ class chatControllers {
         });
       } else {
         const response = await createChatCompletion(text);
-        const saveData = await createConversation("bot", response)
+        const saveData = await createConversation("bot", removeBotText(response))
         return res.status(200).send({ bot: response,saved: saveData, });
       }
     } catch (error) {
