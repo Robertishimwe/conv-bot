@@ -11,7 +11,7 @@ class chatControllers {
       await createConversation("user", text)
 
       const commandsArray = await findComand(); // use a more descriptive variable name
-      console.log("before extract", commandsArray);
+      // console.log("before extract", commandsArray);
       // res.send(commandsArray)
 
       const extractCommands = (wordsArray) => {
@@ -19,7 +19,7 @@ class chatControllers {
           throw new Error("wordsArray is not an array");
         }
         const extractedCommands = wordsArray.map((obj) => obj.command);
-        console.log("after extract", extractedCommands);
+        // console.log("after extract", extractedCommands);
         return extractedCommands; // add a return statement to return the extracted commands
       };
 
@@ -27,11 +27,11 @@ class chatControllers {
         const words = text.split(" "); // split text into individual words
         for (let i = 0; i < words.length; i++) {
           if (extractCommands.includes(words[i])) {
-            console.log({ "matching words": words[i] });
+            // console.log({ "matching words": words[i] });
             return words[i]; // return the matching word
           }
         }
-        console.log(false);
+        // console.log(false);
         return false; // return false if no match is found
       };
 
