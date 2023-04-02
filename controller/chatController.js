@@ -40,9 +40,10 @@ class chatControllers {
           command: findMatchingWord(text, extractCommands(commandsArray?.data)),
         });
         const response = await createChatCompletion(text);
-        await createConversation("bot", response)
+        const saveData = await createConversation("bot", response)
         return res.status(200).send({
           dbres: myServeResponse.data[0].value,
+          saved: saveData,
           bot: `You might be looking for this ${myServeResponse.data[0].value}
      -- 
     ${response}`,
