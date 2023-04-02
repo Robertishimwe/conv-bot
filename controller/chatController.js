@@ -1,6 +1,6 @@
 import { findComand } from "../services/commandService.js";
 import { createChatCompletion } from "../services/openai.js";
-import { createConversation } from "../services/conversationService.js"
+import { createConversation, findConversation } from "../services/conversationService.js"
 
 class chatControllers {
   // chat controller
@@ -11,6 +11,7 @@ class chatControllers {
       await createConversation("user", text)
 
       const commandsArray = await findComand(); // use a more descriptive variable name
+      console.Console("chathistory",findConversation())
       // console.log("before extract", commandsArray);
       // res.send(commandsArray)
 
