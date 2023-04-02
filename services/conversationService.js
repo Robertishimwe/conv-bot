@@ -1,4 +1,4 @@
-import Conversation from '../model/conversation';
+import Conversation from '../model/conversation.js';
 
 const createConversation = async (user, message) => {
   console.log({ user, message })
