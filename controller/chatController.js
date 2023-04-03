@@ -53,12 +53,12 @@ class chatControllers {
           saved: saveData,
           bot: `You might be looking for this ${myServeResponse.data[0].value}
      -- 
-    ${response}`,
+    ${removeBotText(response)}`,
         });
       } else {
         const response = await createChatCompletion(text);
         const saveData = await createConversation("bot", removeBotText(response))
-        return res.status(200).send({ bot: response,saved: saveData, });
+        return res.status(200).send({ bot: removeBotText(response),saved: saveData, });
       }
     } catch (error) {
       console.error(error);
