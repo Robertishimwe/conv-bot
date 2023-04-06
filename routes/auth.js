@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import passport from 'passport';
-import googleController from '../controller/googleAuth'
+import googleController from '../controller/googleAuth.js'
 // import LinkedinController from '../controller/LinkedinAuth';
 // import TwitterController from '../controller/twitterAuth';
 // import AuthController from '../controller/Auth'

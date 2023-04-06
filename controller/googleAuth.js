@@ -1,7 +1,7 @@
 import passport from 'passport';
-import Token from '../helper/token';
-import userService from '../services/userService';
-import '../services/googlePassport' 
+import Token from '../helper/token.js';
+import userService from '../services/userService.js';
+import '../services/googlePassport.js' 
 
 
 passport.use(passport.initialize());
