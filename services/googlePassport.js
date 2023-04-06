@@ -20,6 +20,7 @@ passport.use(
       passReqToCallback: true,
     },
     function strat(request, accessToken, refreshToken, profile, done) {
+      console.log(profile)
       return done(null, profile);
     }
   )
