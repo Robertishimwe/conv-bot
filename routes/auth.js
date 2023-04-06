@@ -10,6 +10,7 @@ import googleController from '../controller/googleAuth'
 // const { registrationValidation, loginValidation } = authValidation;
 //import routes
 
+// Intellia - A name that combines "intelligence" and "liaison," suggesting a bot that's both intelligent and able to connect with people.
 
 const router = Router();
 
