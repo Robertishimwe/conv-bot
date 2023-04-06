@@ -13,14 +13,14 @@ const { generateToken } = Token;
 class googleController {
 	static onSuccess = async (req, res) => {
 		try {
-			const { name, id, email, displayName, profile_picture } = req.user;
+			const { name, id, email, displayName, photos } = req.user;
 
 			const newUser = {
+				profilePicture: photos.value,
 				userName: displayName,
 				googleId: id,
-				Role: 'client',
+				Role: 'basic_user',
 				email,
-				profile_picture
 			};
 
 			console.log(newUser)
