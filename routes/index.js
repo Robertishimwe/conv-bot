@@ -8,6 +8,7 @@ const router = Router();
 
 
 router.use('/chat', chatRoutes)
+router.use('/auth', authRoutes)
 router.use('/command', commandRoutes)
 
 
