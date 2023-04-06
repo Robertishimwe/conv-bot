@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import chatRoutes from './chatRoutes.js';
+import authRoutes from './auth.js';
 import commandRoutes from './commandRoutes.js';
 
 
