@@ -3,14 +3,13 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const ConversationSchema = new Schema({
-    // user: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'User'
-    // },
-   
-
     user: {
-        type: String
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
+   
+    room: {
+        type: String 
     },
 
     message: {

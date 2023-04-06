@@ -15,6 +15,10 @@ const UserSchema = new Schema({
 		min: 3,
 	},
 
+	googleId:{
+		type: String,
+	},
+
     profilePicture:{
         type: String
     },
