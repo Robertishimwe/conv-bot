@@ -48,7 +48,7 @@ class chatControllers {
           command: findMatchingWord(text, extractCommands(commandsArray?.data)),
         });
         const response = await createChatCompletion(text, id);
-        const saveData = await createConversation("bot", removeBotText(response), id)
+        const saveData = await createConversation("Intellia", removeBotText(response), id)
         return res.status(200).send({
           dbres: myServeResponse.data[0].value,
           saved: saveData,
@@ -58,7 +58,7 @@ class chatControllers {
         });
       } else {
         const response = await createChatCompletion(text, id);
-        const saveData = await createConversation("bot", removeBotText(response), id)
+        const saveData = await createConversation("Intellia", removeBotText(response), id)
         return res.status(200).send({ bot: removeBotText(response),saved: saveData, });
       }
     } catch (error) {
