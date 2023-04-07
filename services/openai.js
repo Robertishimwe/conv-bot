@@ -53,8 +53,8 @@ function formatConversationHistory(conversationHistory) {
 
 
 
-const createChatCompletion = async (prompt) => {
-  const unformated = await findConversation()
+const createChatCompletion = async (prompt, roomId) => {
+  const unformated = await findConversation({room: roomId})
   const conversationHistory = formatConversationHistory(unformated.data)
   console.log(conversationHistory)
   const response = await openai.createChatCompletion({
