@@ -1,8 +1,8 @@
 import Conversation from '../model/conversation.js';
 
-const createConversation = async (user, message) => {
+const createConversation = async (user, message, room) => {
   console.log({ user, message, room })
-  const newConversation = new Conversation({ user, message });
+  const newConversation = new Conversation({ user, message, room });
 
   try {
     const savedConversation = await newConversation.save();
