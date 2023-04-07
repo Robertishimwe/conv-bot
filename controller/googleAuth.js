@@ -23,8 +23,6 @@ class googleController {
 				email,
 			};
 
-			console.log(newUser)
-
 			const user = (await findUser(email)) || (await createUser(newUser));
 			const tokenPackage = {
 				name: user.userName,
