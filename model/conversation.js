@@ -4,12 +4,12 @@ const Schema = mongoose.Schema;
 
 const ConversationSchema = new Schema({
     user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        type: String
     },
    
     room: {
-        type: String 
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     },
 
     message: {

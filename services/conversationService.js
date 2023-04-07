@@ -1,7 +1,7 @@
 import Conversation from '../model/conversation.js';
 
 const createConversation = async (user, message) => {
-  console.log({ user, message })
+  console.log({ user, message, room })
   const newConversation = new Conversation({ user, message });
 
   try {

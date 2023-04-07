@@ -7,8 +7,9 @@ class chatControllers {
   static chat = async (req, res) => {
     try {
       const text = req.body.prompt;
+      const { name, id, Role, email } = req.user
 
-      await createConversation("user", text)
+      await createConversation(name, text, id)
 
       const commandsArray = await findComand(); // use a more descriptive variable name
       console.log("chathistory",await findConversation())
