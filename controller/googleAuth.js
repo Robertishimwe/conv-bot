@@ -35,6 +35,7 @@ class googleController {
 				process.env.TOKEN_SECRET,
 				process.env.EXPIRATION
 			);
+			console.log(token)
 			res.redirect(`${process.env.RIDIRECT}/${token}`);
 		} catch (error) {
 			res.status(400).json({ error: error.message });
