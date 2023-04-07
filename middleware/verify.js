@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-module.exports = function (req, res, next) {
+const verify = (req, res, next) => {
   const token = req.header("token");
   if (!token) {
     return res.status(401).send({Message:"You are not allowed to access this page"});
@@ -14,3 +14,5 @@ module.exports = function (req, res, next) {
     }
   }
 };
+
+export default verify;

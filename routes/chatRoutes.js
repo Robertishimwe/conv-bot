@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import verify from '../middleware/verify.js';
+import verify  from '../middleware/verify.js';
 
 import chatControllers from '../controller/chatController.js'
 
