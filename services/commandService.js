@@ -90,7 +90,7 @@ const findComand = async (query) =>{
 
     
   } catch (error) {
-    return { error: true, err };
+    return { error: true, error };
 
   }
 
