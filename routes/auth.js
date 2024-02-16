@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import passport from 'passport';
-import googleController from '../controller/googleAuth.js'
+// import googleController from '../controller/googleAuth.js'
 // import LinkedinController from '../controller/LinkedinAuth';
 // import TwitterController from '../controller/twitterAuth';
 // import AuthController from '../controller/Auth'
@@ -15,8 +15,8 @@ import googleController from '../controller/googleAuth.js'
 const router = Router();
 
 //section routing     
-router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
-router.get('/google/callback', passport.authenticate('google', { failureRedirect: '/failed' }), googleController.onSuccess)
+// router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+// router.get('/google/callback', passport.authenticate('google', { failureRedirect: '/failed' }), googleController.onSuccess)
 // router.get('/linkedin', passport.authenticate('linkedin'));
 // router.get('/auth/linkedin/callback',passport.authenticate('linkedin', { failureRedirect: '/login'}), LinkedinController.onSuccess);
 // router.get('/twitter', passport.authenticate('twitter', { scope: ['profile', 'email'] }));

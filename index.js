@@ -3,18 +3,20 @@ import cors from 'cors';
 import session from 'express-session';
 import routes from './routes/index.js';
 import connectdb from './config/database.js';
+import { createChatCompletion } from './services/api.js'
 
 
 const app = express()
 app.use(cors())
 app.use(express.json())
-app.use(session({
-    secret: 'melody hensley is my spirit animal',
-    resave: true,
-    saveUninitialized: true
-  }));
+// app.use(session({
+//     secret: 'melody hensley is my spirit animal',
+//     resave: true,
+//     saveUninitialized: true
+//   }));
 
 app.use('/api', routes);
+app.use('test', createChatCompletion)
 
 const PORT = process.env.PORT || 5000
 
