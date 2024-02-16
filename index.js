@@ -10,7 +10,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 // app.use(session({
-//     secret: 'melody hensley is my spirit animal',
+//     secret: 'melody hensley ais my spirit animal',
 //     resave: true,
 //     saveUninitialized: true
 //   }));
