@@ -5,8 +5,7 @@ import { findConversation } from "../services/conversationService.js"
 dotenv.config()
 
 const configuration = new Configuration({
-  apiKey: "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",
-  // apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY,
 })
 
 const openai = new OpenAIApi(configuration)
