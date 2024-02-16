@@ -16,7 +16,7 @@ app.use(express.json())
 //   }));
 
 app.use('/api', routes);
-app.use('test', createChatCompletion)
+app.use('/test', createChatCompletion)
 
 const PORT = process.env.PORT || 5000
 
